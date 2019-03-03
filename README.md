@@ -1,4 +1,6 @@
 # VRCParser
+[Jump to download](https://github.com/3e849f2e5c/VRCParser#Download)
+
 A quick example of a VRChat output log parser I made for testing purposes only that I decided to release publicly because someone in the 7.5 billion might find it useful
 
 This program gives you desktop notifications when user leaves or joins the instance you are in.
@@ -20,3 +22,13 @@ Shows who joins and leaves the world in real time
 Just shows the VRChat output log in real time, not used for anything except debugging
 
 ![main window](https://i.imgur.com/JbTyhf5.png)
+
+# Download
+
+__DO NOT__ use this button!
+
+![button](https://i.imgur.com/fYWvJUr.png)
+
+Instead press the button at the top that says "release" and download the latest zip file or click [this link](https://github.com/3e849f2e5c/VRCParser/releases/download/v0.0.0/VRCParser.zip) to directly download it.
+
+![how to download](https://i.imgur.com/Hqs5pEJ.png)
