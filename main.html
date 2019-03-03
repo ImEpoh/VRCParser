@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VRCParser</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="console-container">
+<textarea id="console">
+>>> Please launch this program after opening VRChat
+</textarea>
+</div>
+
+<script>
+	const remote = require('electron');
+
+	remote.ipcRenderer.on('log', (event, message) => {
+		const area = document.getElementById('console');
+		const wasBottom = (area.scrollHeight <= (area.scrollTop + area.offsetHeight));
+		if (document.getElementById('console').value.length > 25000) {
+			document.getElementById('console').value = ">>> Log was cleared to preserve system resources" + "\n";
+		}
+		document.getElementById('console').value += message.trim() + "\n";
+		if (wasBottom === true) {
+			area.scrollTop = area.scrollHeight;
+		}
+	});
+
+	remote.ipcRenderer.on('notify', (event, message) => {
+		const msg = JSON.parse(message);
+		new Notification(msg.title, {
+			body: msg.body,
+			icon: msg.image
+		});
+	});
+</script>
+</body>
+</html>
